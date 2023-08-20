@@ -27,13 +27,13 @@ The model's performace was evaluated using three functions from skliearn.metrics
 
 
 ### Results:
+- Accurracy: The balanced accuracy score was 95% when using the balanced_accuracy_score function from the sklearn.metrics library. The balanced accuracy score is lower than the accurracy score of 99% because the dataset is imbalanced, meaning the dataset contains far more healthy loans than unhealthy loans. Since the model performs so much better at predicting healthy loans, the accurracy score is higher than the balanced accuracy score. Both of these are very good and shows that overall, the you can be confident that the model is correct 95% of the time. 
 
-- Accurracy:
-- Precision:
-- Recall
+- Precision: The classification report shows that the precision of a healthy loan predictions is 1.00, meaning that when the model predicts a loan is healthy, it is correct essentially every time. The classification report shows that the precision of a high-risk loan is 0.85, meaning that when the model predicts a loan is high-risk, it is only correct 85% of the time. This means that the lender has a significant chance of denying a good loan if making their decision based on this model alone.
+
+- Recall: The classification report shows that the recall of a healthy loan prediction is 0.99, meaning that when a loan is healthy, the model will have predicted it is healthy 99% of the time. The classification report shows that the recall of a high-risk loan prediction is 0.91, meaning that when a loan is high-risk, the model will have predicted that 91% of the time.
 
 ### Summary:
+Ultimately, if the decision is "should I ALWAYS go with the precictions of this model?" the lender has to ask themselves this question: Is erroneously denying 15% of healthy loans worth correctly identifying and denying 91% of high-risk loans. They'd have to look at their current track-record of loan decisions to determine if that's better or worse than their current performance.
 
-Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning. (10 points)
+Overall, the lender can be more confident in the model's prediction when it predicts the loan is healthy. Therefore I would recommend that they absolutely go with the model's prediction when approving a loan. When denying a loan, they might first want to look at other contributing factors outside of the model's features.
